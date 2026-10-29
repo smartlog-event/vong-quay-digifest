@@ -204,7 +204,7 @@ $('#form1').addEventListener('submit',async e=>{
 function showResult(){ const p=PRIZES.find(p=>p.id===state.prize); if(!p)return; const miss=p.id==='may-man'; modal({title:p.name,kicker:miss?'CẢM ƠN ANH/CHỊ':'CHÚC MỪNG ANH/CHỊ',img:p.img,body:miss?'Cảm ơn anh/chị đã tham gia chương trình.':'Vui lòng đến quầy Smartlog để nhận quà. Nhân viên sẽ đối chiếu số điện thoại của anh/chị.'}); }
 $('#spin').addEventListener('click',()=>{
   if(state.spinning)return;if(state.spun){showResult();return}
-  const i=PRIZES.findIndex(p=>p.id===state.prize);if(i<0){toast('Chưa có kết quả. Vui lòng liên hệ nhân viên.');return}
+  const i=choosePrizeIndex(state.prize);if(i<0){toast('Chưa có kết quả. Vui lòng liên hệ nhân viên.');return}
   state.spinning=true;$('#spin').disabled=true;$('#spinNote').textContent='Đang quay…';
   const jitter=(Math.random()-.5)*SEG*.56,target=360*6-i*SEG+jitter;
   requestAnimationFrame(()=>{$('#disc').style.rotate=`${target.toFixed(2)}deg`});
