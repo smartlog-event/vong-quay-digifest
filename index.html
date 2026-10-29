@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2b4af0">
+<title>Vòng quay may mắn — Digifest</title>
+<meta name="description" content="Đăng ký và quay vòng quay may mắn tại Digifest.">
+<link rel="icon" href="assets/img/logo-smartlog.webp">
+<link rel="preload" as="image" href="assets/img/bg/bg-1-dangky-mobile.webp">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-step="1">
+
+<div class="bg" aria-hidden="true"></div>
+
+<div class="app">
+
+  <!-- ================= BƯỚC 1 — ĐĂNG KÝ ================= -->
+  <section class="step step--1 is-active" id="step1" aria-labelledby="t1">
+    <div class="wrap">
+      <img class="logo" src="assets/img/logo-smartlog.webp" alt="Smartlog" width="320" height="94">
+      <h1 class="title" id="t1">ĐĂNG KÝ THAM GIA</h1>
+      <p class="lede">Điền thông tin để bắt đầu trải nghiệm</p>
+
+      <form class="card" id="form1" novalidate>
+        <p class="card__head"><span>THÔNG TIN CỦA BẠN</span></p>
+
+        <div class="field">
+          <label for="name">Họ và tên <em>*</em></label>
+          <div class="input">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4.4 0-8 2.5-8 5.5V21h16v-1.5c0-3-3.6-5.5-8-5.5Z"/></svg>
+            <input id="name" name="name" type="text" autocomplete="name"
+                   placeholder="Nhập họ và tên" required maxlength="80">
+          </div>
+          <p class="err" data-err="name"></p>
+        </div>
+
+        <div class="field">
+          <label for="phone">Số điện thoại <em>*</em></label>
+          <div class="input">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.5.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.57 3.5a1 1 0 0 1-.25 1l-2.2 2.3Z"/></svg>
+            <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel"
+                   placeholder="Nhập số điện thoại" required maxlength="15">
+          </div>
+          <p class="err" data-err="phone"></p>
+        </div>
+
+        <div class="field">
+          <label for="company">Tên công ty <em>*</em></label>
+          <div class="input"><input id="company" name="company" type="text" autocomplete="organization" placeholder="Nhập tên công ty" required maxlength="120"></div>
+          <p class="err" data-err="company"></p>
+        </div>
+        <div class="field">
+          <label for="position">Chức vụ <em>*</em></label>
+          <div class="input"><input id="position" name="position" type="text" autocomplete="organization-title" placeholder="Nhập chức vụ" required maxlength="100"></div>
+          <p class="err" data-err="position"></p>
+        </div>
+
+        <p class="note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm-1 14-3.5-3.5 1.4-1.4L11 13.2l4.6-4.6L17 10l-6 6Z"/></svg>
+          Thông tin chỉ được sử dụng cho chương trình.
+        </p>
+      </form>
+
+      <button class="cta" type="submit" form="form1">
+        TIẾP TỤC QUAY
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 5.2 20 12l-6.8 6.8-1.4-1.4 4.4-4.4H4v-2h12.2l-4.4-4.4 1.4-1.4Z"/></svg>
+      </button>    </div>
+  </section>
+
+  <!-- ================= BƯỚC 2 — VÒNG QUAY ================= -->
+  <section class="step step--3" id="step3" aria-labelledby="t3" hidden>
+    <div class="wrap wrap--wheel">
+      <img class="logo" src="assets/img/logo-smartlog.webp" alt="Smartlog" width="320" height="94">
+      <h1 class="title title--big" id="t3">VÒNG QUAY MAY MẮN</h1>
+
+      <div class="wheel" id="wheel">
+        <svg class="wheel__pin" viewBox="-3 -3 38 50" aria-hidden="true">
+          <path d="M16 0a13 13 0 0 1 13 13c0 9-13 31-13 31S3 22 3 13A13 13 0 0 1 16 0Z"
+                stroke="#fff" stroke-width="3.4" stroke-linejoin="round"/>
+          <circle cx="16" cy="13" r="5.4" fill="#fff"/>
+        </svg>
+        <svg class="wheel__disc" id="disc" viewBox="-112 -112 224 224" role="img"
+             aria-label="Vòng quay 5 ô kết quả"></svg>
+        <button class="wheel__go" id="spin" type="button" aria-label="Quay ngay">
+          <strong>START</strong>
+        </button>
+      </div>
+
+      <p class="spin-note" id="spinNote">Nhấn START để quay</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ================= KẾT QUẢ ================= -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" hidden>
+  <div class="modal__box">
+    <p class="modal__kicker" id="mKicker">CHÚC MỪNG ANH/CHỊ</p>
+    <img class="modal__img" id="mImg" alt="" hidden>
+    <h2 class="modal__title" id="mTitle"></h2>
+    <p class="modal__body" id="mBody"></p>
+    <button class="cta cta--sm" type="button" id="mClose">ĐÃ HIỂU</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
